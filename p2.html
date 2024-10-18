@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pitt Fuego</title>
+    <link rel="icon" type="image/jpg" href="favicon.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+</head>
+<body>
+    <div class="centered">
+        <div class="text-block">
+            <div class="dialogue" id="line1">Well, what did you think?</div>
+            <div class="dialogue" id="line2">It's a bit sophomoric, I know. But it gets the gears turning.</div>
+            <div class="dialogue" id="line3">I want to thank you all for coming out tonight and listening.</div>
+            <div class="dialogue" id="line4">There's some more if you're keen to it.</div>
+            <div class="dialogue" id="line5"><i>The crowd goes wild</i></div>
+            <div class="dialogue" id="line6">The boats will make a routine procession as the light dims and the night draws near.</div>
+            <div class="dialogue" id="line7">Quietly, I slink aboard, stowing myself amongst the burlap and soaked crates.</div>
+            <div class="dialogue" id="line8">The subtle crash of broken water against wood coaxes me into sleep.</div>
+            <div class="dialogue" id="line9">After some time, I'm stirred from a visceral dream sequence by a nudging hand.</div>
+            <div class="dialogue" id="line10">The Ferryman. He pauses for a moment and looks around at the obsidian water, all the nothing in particular surrounding us.</div>
+            <div class="dialogue" id="line11">Stars litter the sky like they were carelessly tossed about. He outstretches his palm, signaling me to pay my fare.</div>
+            <div class="dialogue" id="line12">It is warm out, the water is warm, and so am I. His hand is cold, the coin to pay so much so it causes discomfort and almost sticks to my skin.</div>
+            <div class="dialogue" id="line13">It is warm out, the water is warm, and so am I. His hand is cold, and the coin to pay with so much so it causes discomfort, sticking to my skin and almost peeling some off as I hand it off to him.</div>
+            <div class="dialogue" id="line14">We quietly sit for a moment. That's the funny thing about silence—so much is said in it, so little often said with words.</div>
+            <div class="dialogue" id="line15">I feel a stirring in me. "Say, I do not know where you will be dropping me off. Will you take me back? It's a straight shot back to the docks I imagine. I see who must be you sailing day in and day out. I watch the waxing colors of your boats absorb into the splotches of sunlight dotting the waters. Night comes, and your boats are nowhere to be seen; but, invariably, you always come back and then leave in due time. I'm sure it wouldn't be too much inconvenience for us to just go back, right?"</div>
+            <div class="dialogue" id="line16">He doesn't say anything at first, but only seems slightly taken aback.</div>
+            <div class="dialogue" id="line17">"But it is so cold back there," he says. "And you have ridden, you have already paid the fare."</div>
+            <div class="dialogue" id="line18">"It may be cold, and I may have already paid—let alone stowed away on your boat. But please, do take me back".</div>
+            <div class="dialogue" id="line19">"No matter how cold it may be, take me back so that I may feel that warmth when you go inside, and the gust of heated, lived-in air greets you. Take me back, even if I am left destitute; you can keep my fare. I can pay you on interest. Oh, steer this ship around, point it towards trash that stinks and flowers that are pleasant. Please do take me back, go towards a small house in a good school district with moderate property tax. Aim your compass towards the small smile passed when walking by the odd stranger. These, as far as I know, can only be found on land, and you have brought me far out to sea."</div>
+            <div class="dialogue" id="line20">"Very well," he says. Some time passes, and trying to trace faces in the stars above, I find myself drifting off to sleep—and dreams—once more.</div>
+            <div class="dialogue" id="line21"><i>The crowd goes wild</i></div>
+            <div class="dialogue" id="line22">Thank you, thank you. At this point, the hot water has run out, so I must go.</div>
+            <div class="dialogue" id="line23">And so I step out of the shower, and it is very cold.</div>
+        </div>
+        <div class="button-box">
+            <button id="nextButton" class="button">Next</button>
+        </div>
+        <br><br><br><br>
+        <div class="button-box">
+            <a href="index.html" class="button">Start all over</a>
+        </div>
+    </div>
+
+    <script>
+        let currentLine = 0;
+        const lines = document.querySelectorAll('.dialogue');
+        const button = document.getElementById('nextButton');
+
+        lines.forEach((line, index) => {
+            if (index !== currentLine) {
+                line.style.display = 'none';
+            } else {
+                line.style.display = 'block';
+            }
+        });
+
+        button.addEventListener('click', () => {
+            currentLine++;
+
+            if (currentLine < lines.length) {
+                lines[currentLine - 1].style.display = 'none';
+                lines[currentLine].style.display = 'block';
+            }
+
+            if (currentLine === lines.length - 1) {
+                button.textContent = "Finish";
+            }
+
+            if (currentLine === lines.length) {
+                button.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
